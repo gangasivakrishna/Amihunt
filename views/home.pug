@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1 Sprof
+  div(ng-controller = 'logoutCtrl')
+    a(href='/logout' ng-click='logout()') Logout
+  div(ng-controller = 'searchCtrl')
+    form(method='post' ng-submit='search()')
+      input(type='text' ng-model='name' placeholder='name')
+      input(type='submit' value='Search')
+    
+    table
+      tr(ng-repeat="user in names")
+        td {{user.name}}
+        td: button(ng-click="sendme(user)") send to mail
+        td(ng-if='user.otp')
+          form(method='post' ng-submit='getDetails(user)')
+            input(type='text' ng-model='user.code' placeholder='Enter OTP')
+            input(type='submit' value='Get Details')
+
+    table(ng-if='suser.status')
+      tr
+        td Name
+        td {{suser.data.name}}
+      tr
+        td Mobile
+        td {{suser.data.mobile}}
+      tr
+        td Address
+        td {{suser.data.address}}
+      tr
+        td 10<sup>th</sup> Hallticket
+        td {{suser.data.sschtno}}
+      tr
+        td College
+        td {{suser.data.college}}

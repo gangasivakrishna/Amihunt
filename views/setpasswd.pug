@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    div(ng-controller='resetPasswdCtrl')
+        h2 Enter password to continue
+        form(method='post' ng-submit="savePassword()")
+            input(type="password" ng-model="password" name="password")
+            button(type="submit") Reset password

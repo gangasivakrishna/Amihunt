@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h2 Register
+    div(ng-controller="registerCtrl")
+        form(method='post' ng-submit='register()')
+            input(type='email' ng-model='email' name='email' placeholder='email')
+            br
+            input(type='text' ng-model='fullname' name='fullname' placeholder='fullname')
+            br
+            input(type='password' ng-model='password' name='password' placeholder='password')
+            br 
+            button(type='submit') SignUp

@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    div(ng-controller='resetPasswdCtrl')
+        h2 Confirm mail to continue
+        form(method='post' ng-submit="reset()")
+            input(type="email" ng-model="email" name="email")
+            button(type="submit") Reset password

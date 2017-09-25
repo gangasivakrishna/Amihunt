@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h2 Login
+    div(ng-controller="loginCtrl")
+        form(method='post' ng-submit="login()")
+            input(type='email' ng-model='email' name='email' placeholder='email')
+            br
+            input(type='password' ng-model='password' name='password' placeholder='password')
+            br
+            button(type='submit') SignIn

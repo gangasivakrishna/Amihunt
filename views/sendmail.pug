@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    div(ng-controller='sendmailCtrl')
+        h2 Confirm mail to continue
+        form(method='post' ng-submit="sendmail()")
+            input(type="email" ng-model="email" name="email")
+            button(type="submit") Send confirmation mail
